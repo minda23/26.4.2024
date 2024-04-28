@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript</title>
+	<script><!-- tu pišem javascript --></script>
+<style>
+
+	    body{
+	    	background-color: #102930;
+	    }
+		td, th { border: 1px solid black }
+		table { border-collapse: collapse; }
+		.democlass{width:700px}
+
+		section {
+	
+			position: fixed;
+			
+
+		}
+
+
+		input{
+			margin-top: 5rem;
+		}
+	    #ramcek {
+	    	border: 1px solid black;
+	    	padding: 2rem;
+	    	width: 50rem;
+
+
+	    	
+	    }
+
+	    #progres {
+	    	border: 1px solid none;
+	    	margin-top: -2.5rem;
+	    	text-align: center;
+	    	width: 0;
+	    	background-color: orange;
+	    
+
+
+	    }
+
+
+	    .acordeon {
+	    	background-color: blue;
+	    	padding: 2rem;
+	    	width: 80%;
+	    	color: white;
+
+	    }
+
+	    .active, .acordeon:hover {
+  background-color: #ccc;
+}
+
+	    .panel{
+	    	display:none;
+	    	background-color: white;
+	    	overflow: hidden;
+	    	padding: 2rem;
+	    	width: 80%;
+	    }
+
+
+	    #trener{
+	    	border: 1px solid black;
+	    	padding: 12rem;
+            width: 5%;
+            text-align: center;
+            margin-top: 10rem;
+            background-color: orange;
+	    }
+
+
+
+	    #strava{
+	    	border: 1px solid black;
+	    	padding: 12rem;
+            width: 5%;
+            text-align: center;
+                margin-top: 10rem;
+                background-color: skyblue;
+          
+
+	    }
+
+	    #party{
+	    	border: 1px solid black;
+	    	padding: 12rem;
+            width: 5%;
+             margin-top: 10rem;
+             background-color: lightgray;
+          
+
+	    }
+
+	    #ramceky{
+	    	display: flex;
+	    	justify-content: center;
+	    	border: 1px solid;
+	    	background-color: blue;
+	    	margin-top: 2rem;
+	    }
+
+	    #ramceky h1 {
+	    	margin-top: -15rem;
+	    	text-align: center;
+	    }
+
+	      #ramceky1{
+	    	display: flex;
+	    	justify-content: center;
+	    	border: 1px solid;
+	    	background-color: blue;
+	    	margin-top: 2rem;
+	    }
+
+	    #ramceky1 h1 {
+	    	margin-top: -15rem;
+	    	text-align: center;
+	    }
+
+	     #party{
+	    	border: 1px solid black;
+	    	padding: 12rem;
+            width: 5%;
+             margin-top: 10rem;
+             background-color: lightgray;
+          
+
+	    }
+
+	    #cena2 {
+	    	text-align: center;
+
+	    }
+
+
+	    
+
+	       .active1, #ramceky:hover {
+    
+}
+
+       .active2, #ramceky1:hover {
+    
+}
+
+
+    .aktivne, .tab_texty:hover{
+
+    }
+
+    #galeria{
+    	display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        justify-content: center;
+        margin-top: 10rem;
+      
+        padding: 10rem;
+        gap: 0 1rem;
+     
+}
+     
+
+.galeria img {
+    max-width: 100%; 
+    height: auto; 
+
+}
+
+    }
+
+.taby nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	margin-top: 5rem;
+}
+.taby nav .aktivne { color: var(--farebny); }
+#onas_vlavo h4 {
+	text-transform: uppercase;
+	font-size: 1.7rem;
+}
+.taby nav a {
+	text-decoration: none;
+	font-weight: 600;
+	color: orange;
+
+}
+.tab_texty p {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+
+}
+.tab_texty {
+	position: relative;
+	border: 1px solid black;
+
+}
+
+.taby{
+	width: 50%;
+	transform: translateX(50%);
+
+}
+
+#cena1 {
+	text-align: center;
+}
+
+#lightbox_img {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    display: none;
+}
+#lightbox_img:hover {cursor: no-drop;}
+#lightbox_img.overlay { background-color: rgba(0, 0, 0, 0.7); }
+.sipky {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgba(255, 255, 255, 0.3);
+	font-size: 3rem;
+	text-decoration: none;
+	height: 12.5rem;
+	line-height: 12.5rem;
+	border-radius: 1rem;
+}
+.sipka1 {
+	left: 0;
+}
+.sipka2 {
+	right: 0;
+}
+#lightbox_img p {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	margin: 0;
+	font-size: 2rem;
+}
+#lightbox_img img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-height: 90%;
+}
+
+#parallax {
+	position: relative;
+	height: 46rem;
+	overflow: hidden;
+}
+#parallax img, #parallax div {
+	position: absolute;
+	max-width: initial; /* vychodia hodnota */
+}
+#para_mesiac {
+	width: 10rem;
+    top: 14%; /* 14% z vysky rodica */
+    left: 5%; /* 5% z sirky rodica */
+}
+#para_hora {
+	bottom: -14rem;
+    left: 50%;
+    width: 90rem;
+    margin-left: -45rem;
+}
+#para_dom {
+    width: 30rem;
+    bottom: -5rem;
+    right: 8%;
+}
+#para_tabula {
+    width: 16rem;
+    bottom: -6rem;
+    left: 8%;
+}
+
+#stromceky_druhe, #stromceky_prve {
+	background-image: url("https://webstranky.org/img/parallax/les2.png");
+	min-width: 435px;
+}
+#stromceky_druhe {
+	height: 12rem;
+	bottom: -1.8rem;
+}
+#stromceky_prve {
+	height: 15rem;
+    bottom: -2rem;
+}
+#para_trava, #stromceky_druhe, #stromceky_prve {
+	width: 120%;
+	left: -10%;
+    background-repeat: repeat-x;
+    background-size: contain; /* neodrez z obrazka ale zobraz ho na max. jeho rozmery */
+}
+#para_trava {
+    background-image: url(https://webstranky.org/img/parallax/trava.png);
+    bottom: -13rem;
+    height: 20rem;
+    min-width: 1070px;
+}
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.obal {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
+  transform: translateX(3.5%);
+
+
+}
+.obal a {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.obal a:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.obal a:first-child{
+  left: -32px;
+}
+.obal a:last-child{
+  right: -357px;
+}
+.obal .kolotoč{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  text-align: center;
+  gap: 16px;
+  width: 90rem;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.kolotoč::-webkit-scrollbar {
+  display: none;
+}
+.kolotoč.no-transition {
+  scroll-behavior: auto;
+}
+.kolotoč.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.kolotoč.dragging .karta {
+  cursor: grab;
+  user-select: none;
+}
+.kolotoč :where(.karta, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kolotoč .karta {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.kolotoč .karta .img {
+  background: #8B53FF;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+.karta .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.kolotoč .karta h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.kolotoč .karta span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+
+
+
+
+.slide_zlava{
+	animation: forwards slide_zlava 0.5s ease-in-out;
+}
+
+@keyframes slide_zlava{
+	from {transform: translateX(-100vw);}
+	to   {transform: translateX(0vw); }
+}
+
+.slide_sprava{
+	animation: forwards slide_zlava 0.5s ease-in-out;
+}
+
+@keyframes slide_sprava{
+	from {transform: translateX(100vw);}
+	to   {transform: translateX(0vw); }
+}
+
+.odchod_dolava { 
+	animation: forwards odchod_dolava 1.5s ease-in-out; 
+} 
+@keyframes odchod_dolava { 
+	from { transform: translateX(0vw); } 
+	to { transform: translateX(-100vw); } 
+}
+
+.odchod_doprava { 
+	animation: forwards odchod_doprava 1.5s ease-in-out; 
+} 
+@keyframes odchod_doprava { 
+	from { transform: translateX(0vw); } 
+	to { transform: translateX(100vw); } 
+} 
+
+ .form {
+    margin: 10rem; /* Adjust the value to your preference */
+  }
+	  
+	</style>
+	<link rel="stylesheet" href="toastr.min.css">
+</head>
+<body id="telo">
+	   <section>
+			<div id="ramcek"></div>
+			<div id="progres">.</div>
+		  </section>
+		  <br>
+	
+
+
+    	  <input type="text" id="jedlo_input" >
+    <button onclick="jedlocekuj()">Check</button>
+     
+    <table>
+		<thead>
+
+			<tr>
+				<th>Názov Filmu</th>
+				<th>žáner</th>
+				<th>hodnotenie</th>
+			</tr>
+		</thead>
+		<tbody id="telo">
+		</tbody>	
+	</table>
+
+
+<label >Vyber dátumu:</label>
+    <select  id="datum1">
+      <option value="2001-04-15 10:30:12">2001-04-15</option>
+      <option value="2002-04-15 10:30:12">2002-04-15</option>
+      <option value="2003-04-15 10:30:12">2003-04-15</option>
+      <option value="2004-04-15 10:30:12">2004-04-15</option>
+      <option value="2005-04-15 10:30:12">2005-04-15</option>
+      <option value="2006-04-15 10:30:12">2006-04-15</option>
+    </select>
+
+    <select  id="datum2">
+        <option value="2001-04-15 10:30:12">2001-04-15</option>
+        <option value="2002-04-15 10:30:12">2002-04-15</option>
+        <option value="2003-04-15 10:30:12">2003-04-15</option>
+        <option value="2004-04-15 10:30:12">2004-04-15</option>
+        <option value="2005-04-15 10:30:12">2005-04-15</option>
+        <option value="2006-04-15 10:30:12">2006-04-15</option>
+      </select><br>
+      <button id="vypis">Vypiš</button>
+
+
+<br>
+        <p id="veta">ahoj clovek ako sa mas a kde byvas?</p>
+		<input type="text" id="telo" >
+    	<button id="btn">Check</button>
+<br>
+
+         <textarea id="textovepole"></textarea>
+         <button id="buttonik">prepiše vetu v p elemente</button>
+
+    <br>
+         <img id="obrazok" src="priroda.webp" alt="Girl in a jacket" width="500" height="600">
+         <br>
+         <button id="butonik">obrazok zvačši sa</button>
+
+         
+
+			
+			    <button id="colorvyber" data-color="#ffffff" style="background-color: #ffffff;">biela</button>
+			    <button id="colorvyber" data-color="#ff0000" style="background-color: #ff0000;">červena</button>
+			    <button id="colorvyber" data-color="#00ff00" style="background-color: #00ff00;">zeléna</button>
+			    <button id="colorvyber" data-color="#0000ff" style="background-color: #0000ff;">modrá</button>
+			    <button id="colorvyber" data-color="#ffff00" style="background-color: #ffff00;">žltá</button>
+			<br>
+            <br>
+        
+<p>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer metus odio, mollis non tempus in, volutpat nec ipsum. Donec sed justo non leo placerat porttitor. Curabitur velit nulla, sodales in nunc sit amet, semper efficitur magna. Duis aliquet nibh nec mauris hendrerit dignissim. Sed eu auctor massa. Quisque eget facilisis turpis. Cras vulputate cursus arcu eu consectetur.
+<br>
+Curabitur eget aliquet neque. Donec posuere scelerisque dapibus. Nullam in lorem nisl. Donec vehicula libero a ligula venenatis cursus. Aliquam malesuada felis quis pharetra lacinia. Nullam dapibus commodo hendrerit. Etiam blandit, dui aliquet viverra fermentum, sem erat venenatis enim, non maximus tellus magna quis nisi. Mauris scelerisque iaculis nunc a feugiat. Vestibulum ut imperdiet metus, nec faucibus ex. Duis placerat, dolor nec eleifend efficitur, tortor quam pharetra tortor, sed posuere metus lorem sit amet augue. Duis ac ligula rhoncus, tempus ipsum nec, aliquet ex. Phasellus faucibus diam ut nunc placerat, auctor venenatis nisi viverra. Duis non tincidunt lorem, volutpat finibus eros. Aliquam scelerisque dui viverra velit semper, sit amet efficitur turpis feugiat. Etiam placerat volutpat mattis. In ornare risus non leo dignissim, eget dignissim nisl porttitor.
+<br>
+Etiam mollis, dui ut consectetur cursus, quam neque molestie neque, mollis dignissim leo urna vitae odio. Mauris quis arcu lectus. Curabitur mi mi, bibendum nec rhoncus a, pulvinar eu est. Vivamus metus arcu, auctor eu urna et, pretium rutrum ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur fermentum facilisis leo vitae commodo. Praesent pellentesque hendrerit odio. In hac habitasse platea dictumst. Maecenas placerat, odio ac condimentum laoreet, justo sem ornare ante, ac tristique diam dui nec ex.
+<br>
+Nullam elit risus, sollicitudin ac mi et, porta suscipit augue. Sed mattis ut orci eget vulputate. Nullam ut feugiat massa, ac varius enim. In volutpat efficitur justo, sed dictum mauris. Cras dignissim, justo quis vestibulum dapibus, justo quam venenatis dolor, fringilla rutrum mi lacus eget neque. Maecenas non fringilla est, non efficitur massa. Aliquam vestibulum volutpat ex sit amet pharetra. Phasellus euismod rutrum rutrum. Nam vestibulum ex et eros cursus, in placerat magna rhoncus. In quam arcu, commodo non lacinia id, lobortis ac erat. Aliquam laoreet sed sem a lobortis. Nullam non tellus id mi accumsan convallis. Pellentesque tellus augue, tincidunt ac accumsan vel, tempor sed mauris.
+<br>
+Nam ultricies libero a ultricies finibus. Ut scelerisque gravida commodo. Donec sollicitudin, metus in iaculis congue, urna tortor tempor nunc, in malesuada sapien sapien eu neque. Quisque sit amet massa at orci elementum dapibus et vel tortor. Phasellus gravida lorem est, quis faucibus nisi tempor non. Etiam vitae elit sit amet nisl ullamcorp
+</p>
+
+<br>
+
+<button class="acordeon">Ako vám môžeme pomôcť.</button>
+<div class="panel">
+  <p>Nam ultricies libero a ultricies finibus. Ut scelerisque gravida commodo. Donec sollicitudin, metus in iaculis congue, urna tortor tempor nun</p>
+</div>
+
+<button class="acordeon">chceťe požiadať o nový uver.</button>
+<div class="panel">
+  <p>n malesuada sapien sapien eu neque. Quisque sit amet massa at orci elementum dapibus et vel tortor. Phasellus gravida lorem est, quis faucibus </p>
+</div>
+
+<button class="acordeon">Ak máťe zaujimave podnety ozvite sa.</button>
+<div class="panel">
+  <p>Phasellus gravida lorem est, quis faucibus nisi tempor non. at orci elementum dapibus et vel t </p>
+</div>
+
+<h1>Rozpočet: <span id="rozpocet_span">50</span>€</h1>
+<div id="ramceky">
+		
+<div id="trener"><h1>Treneri</h1>
+   <img class="obrazok" src="coach1.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="coach2.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="coach3.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="coach4.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="coach5.png" alt="Girl in a jacket" width="50" height="60">
+</div>
+<div id="party"><h1>party_plocha</h1></div>
+<div id="strava"><h1>strava</h1>
+	 <img class="obrazok" src="jablko.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="jahoda.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="pomaranc.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="hrozno.png" alt="Girl in a jacket" width="50" height="60">
+   <img class="obrazok" src="banan.png" alt="Girl in a jacket" width="50" height="60">
+</div>
+</div>
+
+<br>
+
+
+
+
+        <div class="taby">
+						<nav>
+							<a href="#tab_smer">strana Smer</a>
+		                  	<span>|</span>
+		                  	<a href="#tab_hlas" class="aktivne">strana Hlas</a>
+		                  	<span>|</span>
+		                  	<a href="#tab_republika">strana republika</a>
+						</nav>
+						<div class="tab_texty">
+							 <p class="tab" id="tab_smer">Strana SMER - sociálna demokracia je najväčšou a najúspešnejšou politickou stranou na Slovensku. Naším cieľom je už od vzniku v roku 1999 zastupovať záujmy slabších a ohrozených skupín, v politickom súboji presadzovať stabilitu a pokoj v štáte a vybudovať úspešne Slovensko.Preto sme radi </p>
+
+                  			<p class="tab" id="tab_hlas">Dovoľte nám predstaviť Vám novú politickú stranu HLAS – sociálna demokracia. Chceme byť hlasom sociálnej demokracie – pracujúcich, slabších, chorých, všetkých, ktorí potrebujú pomoc.čiže takto to máme a sme tu pre vás
+                  			už navždy nevdávajte sa</p>
+
+                  			<p class="tab" id="tab_republika">Hnutie REPUBLIKA je najsilnejšou pronárodnou stranou s viac ako tisíc aktívnymi členmi. Máme zastupiteľov v Národnej.</p>
+						</div>
+					</div>
+				
+				</div>
+
+
+			
+					<div id="galeria">
+						 <img class="kod" src="code1.jpg" alt="Girl in a jacket" width="450" height="350" title="23.11.1997">
+   						 <img class="kod" src="code2.jpg" alt="Girl in a jacket" width="450" height="350" title="23.11.1998"> 
+  						 <img class="kod" src="code3.webp" alt="Girl in a jacket" width="450" height="350"title="23.11.1999">
+  						 <img class="kod" src="code4.jpg" alt="Girl in a jacket" width="450" height="350" title="23.11.2000">
+  					     <img class="kod" src="code5.webp" alt="Girl in a jacket" width="450" height="350"title="23.11.2001">
+  					     <img class="kod" src="code6.webp" alt="Girl in a jacket" width="450" height="350"title="23.11.2002">
+						
+					</div>
+
+					 <div id="lightbox_img" class="overlay"> 
+					 	   <img class="kod" src="code6.webp" alt="Girl in a jacket" width="1200" height="950">
+						<a href="#" class='sipky sipka1'>⇦</a> 
+						<a href="#" class='sipky sipka2'>⇨</a> 
+						<p>1/5</p>
+					</div>
+
+		<section id="parallax">
+	        <img id="para_mesiac" src="https://webstranky.org/img/parallax/mesiac.png" alt="mesiac">
+			<img id="para_hora" src="https://webstranky.org/img/parallax/hora.png" alt="hora">
+	        <div id="stromceky_druhe"></div>
+	        <div id="stromceky_prve"></div>
+	        <img id="para_dom" src="https://webstranky.org/img/parallax/dom.png" alt="dom">
+	        <img id="para_tabula" src="https://webstranky.org/img/parallax/tabula.png" alt="tabuľa">
+	        <div id="para_trava"></div>
+		</section>
+			
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Infinite Card Slider JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="obal">
+      <a id="left" href="slide" class="fa-solid fa-angle-left"></a>
+      <ul class="kolotoč">
+        <li class="karta">
+          <div class="img" id="slide"><img src="images/img-1.jpg" alt="img"></div>
+          <h2>Blanche Pearson</h2>
+          <span>Sales Manager</span>
+        </li>
+        <li class="karta">
+          <div class=" img" id="slide"><img src="images/img-2.jpg" alt="img" ></div>
+          <h2>Joenas Brauers</h2>
+          <span>Web Developer</span>
+        </li>
+        <li class="karta">
+          <div class=" img" id="slide"><img src="images/img-3.jpg" alt="img"></div>
+          <h2>Lariach French</h2>
+          <span>Online Teacher</span>
+        </li>
+        <li class="karta">
+          <div class="img" id="slide"><img src="images/img-4.jpg" alt="img"></div>
+          <h2>James Khosravi</h2>
+          <span>Freelancer</span>
+        </li>
+        <li class="karta">
+          <div class="img" id="slide"><img src="images/img-5.jpg" alt="img"></div>
+          <h2>Kristina Zasiadko</h2>
+          <span>Bank Manager</span>
+        </li>
+        <li class="karta">
+          <div class="img" id="slide" ><img src="images/img-6.jpg" alt="img"></div>
+          <h2>Donald Horton</h2>
+          <span>App Designer</span>
+        </li>
+      </ul>
+      <a id="right"  href="#slide"  class="fa-solid fa-angle-right"></a>
+    </div>
+<div class="form">
+    <form id="formularik" action="/action_page.php">
+  <label for="email">Enter email addres:</label>
+  <input type="email" id="email" name="email" >
+  <label id="phone1" for="phone">Enter your phone number:</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+  <button id="submit" type="submit">odošli</button>
+</form>
+</div>
+  </body>
+</html>
+
+
+<script src="js/jquery-3.7.1.min.js"></script>	
+<script src="js/script.js"></script>
+
+</body>
+</html>
